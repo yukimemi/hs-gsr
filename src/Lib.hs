@@ -1,5 +1,10 @@
-module Lib ( hello ) where
+module Lib where
 
-hello :: IO ()
-hello = putStrLn "Hello, haskell !"
-
+chomp :: String -> String
+chomp str
+  | x == '\r' = chomp xs
+  | x == '\n' = chomp xs
+  | otherwise = str
+  where
+    x = last str
+    xs = init str
